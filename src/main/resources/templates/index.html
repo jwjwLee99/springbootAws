@@ -12,15 +12,11 @@
     <div>
         This is Test Springboot!
     </div>
-    <button id="btn">
-        <strong>To Data</strong>
-    </button>
-    <script>
-        $("#btn").on('click', () => {
-            $.get("/test", (event) =>{
-                console.error(event);
-            });
-        })
-    </script>
+    
+    <div>
+        <a href="/test">
+            <strong>To Data</strong>
+        </a>
+    </div>
 </body>
 </html>
