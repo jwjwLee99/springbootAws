@@ -17,7 +17,9 @@
     </button>
     <script>
         $("#btn").on('click', () => {
-            $.get("/test");
+            $.get("/test", (event) =>{
+                console.error(event);
+            });
         })
     </script>
 </body>
