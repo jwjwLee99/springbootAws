@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <title>Document</title>
+    <style>
+        th, td {
+            width: 200px;
+        }
+        td{
+            border: 2px solid #000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="change">board test</h2>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>날짜</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="row, status : ${data}">
+                    <td th:text="${row.id}" class="aa"></td>
+                    <td th:text="${row.name}" class="aa"></td>
+                    <td th:text="${row.dateTime}" class="aa"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(() => {
+            $(".change").on('mouseover', () => {
+                $(".aa").css({"background-color" : "#000"})
+            })
+
+            $(".change").on('mouseout', () => {
+                $(".aa").css({"background-color" : "#fff"})
+            })
+        })
+    </script>
+</body>
+</html>
